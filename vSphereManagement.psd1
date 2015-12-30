@@ -3,7 +3,8 @@
 # Script module or binary module file associated with this manifest.
 RootModule = '.\vSphereManagement.psm1'
 
-DscResourcesToExport = 'vSphereDatacenter'
+#DscResourcesToExport = 'vSphereDatacenter'
+DscResourcesToExport = @('vSphereDatacenter','vSphereFolder')
 
 # Version number of this module.
 ModuleVersion = '1.0'
