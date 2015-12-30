@@ -10,6 +10,24 @@
 #>
 
 [DscResource()]
+class vSphereVM
+{
+    [DscProperty(Key)]
+    [string]$Name
+
+    [void] Set()
+    {
+    }
+
+    [bool] Test()
+    {
+        return $true
+    }
+
+    [vSphereVM] Get()
+    {
+    }
+}
 class vSphereDatacenter
 {
     [DscProperty(Key)]
