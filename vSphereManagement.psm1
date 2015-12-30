@@ -26,6 +26,9 @@ class vSphereVM
 
     [vSphereVM] Get()
     {
+        $vmconfig = [hashtable]::new()
+        $vmconfig.Add('Name', $this.Name)
+        return $vmconfig
     }
 }
 class vSphereDatacenter
