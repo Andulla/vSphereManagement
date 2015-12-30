@@ -385,6 +385,27 @@ class vSphereDatacenter
     }
     
     
+  
+     [bool] CreateDatacenter() {
+        
+        $dc = $null
+        Write-Verbose "Datacenter: $($this.Name)"
+
+        $folder = Get-Folder -Name Datacenters
+
+        $dc = New-Datacenter -Name $this.Name `
+                             -Location $folder `
+                              -verbose:$false
+        
+        if ($dc -ne $null) 
+        {
+            return $true
+        } else 
+        {
+            return $false
+        }
+    }
+
     [bool] ConnectMeTovSphere()
     {
         if (!$this.ConnectedTovCenter)
@@ -419,24 +440,5 @@ class vSphereDatacenter
         return $true
     }
 
-     [bool] CreateDatacenter() {
-        
-        $dc = $null
-        Write-Verbose "Datacenter: $($this.Name)"
-
-        $folder = Get-Folder -Name Datacenters
-
-        $dc = New-Datacenter -Name $this.Name `
-                             -Location $folder `
-                              -verbose:$false
-        
-        if ($dc -ne $null) 
-        {
-            return $true
-        } else 
-        {
-            return $false
-        }
-    }
     
-} # This module defines a class for a DSC "vSphereDatacenter" provider.
+} # DSC module to manage a VMware vSphere environment with DSC and PowerCLI.
