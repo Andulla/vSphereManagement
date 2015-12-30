@@ -5,8 +5,196 @@
 }
 
 <#
-   This resource manages the Datacenter within a VMware vSphere vCenter environment.
-   [DscResource()] indicates the class is a DSC resource
+   This resource manages the Custom Attributes within a VMware vSphere vCenter environment.
+#>
+
+[DscResource()]
+class vSphereCustomAttribute
+{
+    [DscProperty(Key)]
+    [string]$Name
+
+    [void] Set()
+    {
+    }
+
+    [bool] Test()
+    {
+        return $true
+    }
+
+    [vSphereCustomAttribute] Get()
+    {
+        $caconfig = [hashtable]::new()
+        $caconfig.Add('Name', $this.Name)
+        return $caconfig
+    }
+}
+
+<#
+   This resource manages the Distributed Switches within a VMware vSphere vCenter environment.
+#>
+
+[DscResource()]
+class vSphereDistributedSwitch
+{
+    [DscProperty(Key)]
+    [string]$Name
+
+    [void] Set()
+    {
+    }
+
+    [bool] Test()
+    {
+        return $true
+    }
+
+    [vSphereDistributedSwitch] Get()
+    {
+        $dsconfig = [hashtable]::new()
+        $dsconfig.Add('Name', $this.Name)
+        return $dsconfig
+    }
+}
+
+<#
+   This resource manages the local Switches within a VMware vSphere vCenter environment.
+#>
+
+[DscResource()]
+class vSphereLocalSwitch
+{
+    [DscProperty(Key)]
+    [string]$Name
+
+    [void] Set()
+    {
+    }
+
+    [bool] Test()
+    {
+        return $true
+    }
+
+    [vSphereLocalSwitch] Get()
+    {
+        $lsconfig = [hashtable]::new()
+        $lsconfig.Add('Name', $this.Name)
+        return $lsconfig
+    }
+}
+
+<#
+   This resource manages the ResourePool within a VMware vSphere vCenter environment.
+#>
+
+[DscResource()]
+class vSphereResourcePool
+{
+    [DscProperty(Key)]
+    [string]$Name
+
+    [void] Set()
+    {
+    }
+
+    [bool] Test()
+    {
+        return $true
+    }
+
+    [vSphereResourcePool] Get()
+    {
+        $rpconfig = [hashtable]::new()
+        $rpconfig.Add('Name', $this.Name)
+        return $rpconfig
+    }
+}
+
+<#
+   This resource manages the Folder within a VMware vSphere vCenter environment.
+#>
+
+[DscResource()]
+class vSphereFolder
+{
+    [DscProperty(Key)]
+    [string]$Name
+
+    [void] Set()
+    {
+    }
+
+    [bool] Test()
+    {
+        return $true
+    }
+
+    [vSphereFolder] Get()
+    {
+        $folderconfig = [hashtable]::new()
+        $folderconfig.Add('Name', $this.Name)
+        return $folderconfig
+    }
+}
+
+<#
+   This resource manages the Datastores within a VMware vSphere vCenter environment.
+#>
+
+[DscResource()]
+class vSphereDatastore
+{
+    [DscProperty(Key)]
+    [string]$Name
+
+    [void] Set()
+    {
+    }
+
+    [bool] Test()
+    {
+        return $true
+    }
+
+    [vSphereDatastore] Get()
+    {
+        $dsconfig = [hashtable]::new()
+        $dsconfig.Add('Name', $this.Name)
+        return $dsconfig
+    }
+}
+
+<#
+   This resource manages the Clusters within a VMware vSphere vCenter environment.
+#>
+
+[DscResource()]
+class vSphereCluster
+{
+    [DscProperty(Key)]
+    [string]$Name
+
+    [void] Set()
+    {
+    }
+
+    [bool] Test()
+    {
+        return $true
+    }
+
+    [vSphereCluster] Get()
+    {
+        $clusterconfig = [hashtable]::new()
+        $clusterconfig.Add('Name', $this.Name)
+        return $clusterconfig
+    }
+}
+
+<#
+   This resource manages the Virtual Machines within a VMware vSphere vCenter environment.
 #>
 
 [DscResource()]
@@ -31,6 +219,40 @@ class vSphereVM
         return $vmconfig
     }
 }
+
+<#
+   This resource manages the ESXi host within a VMware vSphere vCenter environment.
+#>
+
+[DscResource()]
+class vSphereESXi
+{
+    [DscProperty(Key)]
+    [string]$Name
+
+    [void] Set()
+    {
+    }
+
+    [bool] Test()
+    {
+        return $true
+    }
+
+    [vSphereESXi] Get()
+    {
+        $esxiconfig = [hashtable]::new()
+        $esxiconfig.Add('Name', $this.Name)
+        return $esxiconfig
+    }
+}
+
+
+<#
+   This resource manages the Datacenter within a VMware vSphere vCenter environment.
+#>
+
+[DscResource()]
 class vSphereDatacenter
 {
     [DscProperty(Key)]

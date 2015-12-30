@@ -4,7 +4,7 @@
 RootModule = '.\vSphereManagement.psm1'
 
 #DscResourcesToExport = 'vSphereDatacenter'
-DscResourcesToExport = @('vSphereDatacenter','vSphereVM')
+DscResourcesToExport = @('vSphereDatacenter','vSphereVM','vSphereESXi','vSphereCluster','vSphereDatastore','vSphereFolder','vSphereResourcePool','vSphereLocalSwitch', 'vSphereDistributedSwitch','vSphereCustomAttribute')
 
 # Version number of this module.
 ModuleVersion = '1.0'
